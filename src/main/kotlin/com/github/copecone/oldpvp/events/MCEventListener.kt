@@ -17,9 +17,7 @@ object MCEventListener : Listener {
     @EventHandler
     fun onHit(e: EntityDamageByEntityEvent) {
         if (e.entity is Player && e.damager is Player) {
-            if (!(e.damager as Player).isTicking) {
-                (e.damager as Player).noDamageTicks = OldPVP.tickTime
-            }
+            (e.damager as Player).noDamageTicks = OldPVP.tickTime
         }
     }
 
